@@ -10,6 +10,9 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  ## disable fitur yg bikin 
 
 db = SQLAlchemy(app)  ### Menghubungkan SQL alchemy dengan Flask
 
+@app.route("/test")
+def test():
+    return "OK"
 
 ###### Database Model
 class Student(db.Model):
