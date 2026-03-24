@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+print("APP STARTING...") 
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///students.db"  ## menentukan database yg akan digunakan (kita pake SQL lite) Bisa diganti
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  ## disable fitur yg bikin memory berat
 
@@ -17,7 +19,7 @@ class Student(db.Model):
 
 ### CREATE TABLE -- di run hanya sekali
 with app.app_context():
-    db.create_all()
+    db.create_all() 
 #print("DB created")
 
 
