@@ -1,0 +1,11 @@
+<h1>Edit Student Data</h1>
+
+<form method="POST" action="{{ url_for('update_student', id=student.id) }}">
+    Name :
+    <input type="text" name="Nama" value="{{student.name}}">
+    Age :
+    <input type="number" name="Usia" value="{{student.age}}">
+    <button type="submit">Update Data</button>
+
+</form>
+<a href="{{url_for('index')}}">Back</a>

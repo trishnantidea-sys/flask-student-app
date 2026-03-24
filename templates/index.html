@@ -1,0 +1,21 @@
+<h1>Student List</h1>
+
+
+<ul>
+{% for s in students %}
+<li>{{ s.name }} - {{ s.age }}
+    <a href="{{ url_for('delete_student', id=s.id) }}">Delete</a>
+    <a href="{{ url_for('edit_student', id=s.id) }}">Edit</a>
+</li>
+
+{% endfor %}
+</ul>
+
+
+
+<h2>Add New Students</h2>
+<form method="POST" action="/add">
+    Name : <input type="text" name="name">
+    Age : <input type="number" name="age">
+    <button type="submit">Add Data</button>
+</form>
